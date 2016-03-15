@@ -8,11 +8,13 @@
     <!-- Bootstrap core CSS -->
     <link href="resources/bootstrap.min.css" rel="stylesheet">
 
-    <link href="resources/cover.css" rel="stylesheet">
+    <!-- <link href="resources/cover.css" rel="stylesheet"> -->
+    <link href="resources/dashboard.css" rel="stylesheet">
     <script src="resources/ie-emulation-modes-warning.js"></script><style type="text/css"></style>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.min.js"></script>
-    <script src="controllers/controller.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular-route.min.js"></script>
 
+    <script src="controllers/controller.js"></script>
   </head>
 
   <body>
@@ -23,29 +25,7 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-    <div class="site-wrapper" ng-controller="LoginCtrl">
-
-      <div class="site-wrapper-inner">
-
-        <div class="cover-container">
-
-            <div class="inner">
-              <!-- <h3 class="masthead-brand">Cover</h3> -->
-              <img src="images/logo.png" style="width:304px;height:228px;">
-            </div>
-
-      <form class="form-signin">
-        <input type="text" id="inputId" class="form-control" ng-model="user.id" placeholder="Matrix ID" required autofocus>
-        <input type="password" id="inputPassword" class="form-control" ng-model="user.password"placeholder="Password" required>
-        <br>
-        <button class="btn btn-lg btn-primary btn-block" ng-click="login()"type="submit">Login</button>
-      </form>
-
-        </div>
-
-      </div>
-
-    </div>
+    <div ng-view> </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

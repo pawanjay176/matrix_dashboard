@@ -19,6 +19,18 @@ app.post('/login',function(req, res) {
   });
   console.log("starting");
   matrixClient.startClient();
+  matrixClient.on("Room.timeline", function(event, room, toStartOfTimeline) {
+       if (toStartOfTimeline) {
+           return; // don't print paginated results
+       }
+       if (event.getType() !== "m.room.message") {
+           return; // only print messages
+       }
+       console.log(
+           // the room name will update with m.room.name events automatically
+           "(%s) %s :: %s", room.name, event.getSender(), event.getContent().body
+       );
+   });
 });
 
 app.listen(3000);
@@ -37,17 +49,6 @@ console.log("server on port 3000");
 
 // console.log(matrixClient.getAccessToken());
 
-// matrixClient.on("Room.timeline", function(event, room, toStartOfTimeline) {
-//        if (toStartOfTimeline) {
-//            return; // don't print paginated results
-//        }
-//        if (event.getType() !== "m.room.message") {
-//            return; // only print messages
-//        }
-//        console.log(
-//            // the room name will update with m.room.name events automatically
-//            "(%s) %s :: %s", room.name, event.getSender(), event.getContent().body
-//        );
-//    });
+// 
 // console.log("starting");
 //    matrixClient.startClient();
