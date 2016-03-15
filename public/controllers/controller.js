@@ -4,9 +4,15 @@ myApp.controller('LoginCtrl', ['$scope', '$http', function($scope, $http) {
 
 
 $scope.login = function() {
-  console.log($scope.user);
+  var data = JSON.stringify({user: $scope.user.id, password: $scope.user.password,
+  	type: "m.login.password"});
+  $http.post("http://localhost:8008/_matrix/client/api/v1/login", data).success(function(details, err){
+  	console.log(details);
+  	$http.post('/login',details).success(function(response){
+  		console.log(response);
+  	});
+  });
 };
-
 // var refresh = function() {
 //   $http.get('/contactlist').success(function(response) {
 //     console.log("I got the data I requested");
