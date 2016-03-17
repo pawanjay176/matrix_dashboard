@@ -1,0 +1,30 @@
+{
+  "name": "matrix",
+  "version": "1.0.0",
+  "description": "test iot dashboard",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pawanjay176/matrix_dashboard.git"
+  },
+  "keywords": [
+    "matrix",
+    "gsoc"
+  ],
+  "author": "Pawan Dhananjay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pawanjay176/matrix_dashboard/issues"
+  },
+  "homepage": "https://github.com/pawanjay176/matrix_dashboard#readme",
+  "dependencies": {
+    "async": "^1.5.2",
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "matrix-js-sdk": "^0.4.2",
+    "mongojs": "^2.3.0"
+  }
+}
